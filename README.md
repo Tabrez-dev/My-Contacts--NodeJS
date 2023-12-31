@@ -20,9 +20,8 @@ Make sure you have the following installed on your machine:
    git clone https://github.com/your-username/mycontacts-backend.git
 2. Navigate to the project folder:
 
-bash
-Copy code
 cd mycontacts-backend
+
 3. Install dependencies:
 npm install
 
