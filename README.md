@@ -1,10 +1,6 @@
 # My-Contacts--NodeJS
 The project is a backend API for a contacts management system. It is designed to handle user registration, authentication, and authorization, allowing users to sign up, log in, and manage their contact information. 
 
-# MyContacts Backend
-
-This project is the backend API for a contacts management system. It provides endpoints for user registration, authentication, and contact management. The API follows a role-based access control system, distinguishing between regular users and administrators.
-
 ## Getting Started
 
 To run this project on your machine, follow these steps:
