@@ -1,9 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const jwt=require("jsonwebtoken");
 
-const validateToken=asyncHandler(async(req,res,next)=>{
+const adminValidateToken =asyncHandler(async(req,res,next)=>{
     let token;
-    let authHeader=req.headers.Authorization || req.headers.Authorization;
+    let authHeader=req.headers.Authorization || req.headers.authorization;
     
     if(authHeader && authHeader.startsWith("Bearer")){
         token=authHeader.split(" ")[1];
@@ -18,9 +18,13 @@ const validateToken=asyncHandler(async(req,res,next)=>{
             throw new Error("User is not authorized");
         }
         req.user=decoded.user;
-        next();
+        if(req.user.role!=="admin"){
+            res.status(403);
+            throw new Error("User is not authorized to access this resource");
+        }
+        next();//middle ware
         });
    
     }
 });
-module.exports=validateToken;
+module.exports=adminValidateToken ;

@@ -34,8 +34,5 @@ const errorHandler= (err, req, res, next)=>{
             console.log("No Error, All Good!");
             break;
     }
-    //remove stack trac ein prod env
-    //remove stack trac ein prod env
-
 };
 module.exports=errorHandler;
